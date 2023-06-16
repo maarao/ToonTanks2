@@ -24,6 +24,15 @@ void ATank::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 	PlayerInputComponent->BindAxis(TEXT("Turn"), this, &ATank::Turn);
 }
 
+// Called when the game starts or when spawned
+void ATank::BeginPlay()
+{
+	Super::BeginPlay();
+
+	PlayerController = Cast<APlayerController>(GetController());
+	
+}
+
 void ATank::Move(float Value)
 {
 	AddActorLocalOffset(FVector(Value * UGameplayStatics::GetWorldDeltaSeconds(this) * MoveMultiplier, 0, 0), true);
