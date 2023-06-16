@@ -26,10 +26,10 @@ void ATank::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 void ATank::Move(float value)
 {
-	AddActorLocalOffset(FVector(value * UGameplayStatics::GetWorldDeltaSeconds(GetWorld()) * MoveMultiplier, 0, 0));
+	AddActorLocalOffset(FVector(value * UGameplayStatics::GetWorldDeltaSeconds(this) * MoveMultiplier, 0, 0));
 }
 
 void ATank::Turn(float value)
 {
-	AddActorLocalRotation(FRotator(0, value * UGameplayStatics::GetWorldDeltaSeconds(GetWorld()) * TurnMultiplier, 0));
+	AddActorLocalRotation(FRotator(0, value * UGameplayStatics::GetWorldDeltaSeconds(this) * TurnMultiplier, 0));
 }
