@@ -27,9 +27,9 @@ private:
 	class UCameraComponent* CameraComponent;
 
 	UPROPERTY(EditAnywhere)
-	float MoveMultiplier = 1;
+	float MoveMultiplier = 500;
 	UPROPERTY(EditAnywhere)
-	float TurnMultiplier = 1;
+	float TurnMultiplier = 100;
 
 	void Move(float value);
 	void Turn(float value);

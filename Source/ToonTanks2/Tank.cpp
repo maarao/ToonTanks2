@@ -5,6 +5,7 @@
 
 #include "Camera/CameraComponent.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "Kismet/GameplayStatics.h"
 
 ATank::ATank()
 {
@@ -25,10 +26,10 @@ void ATank::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 void ATank::Move(float value)
 {
-	AddActorLocalOffset(FVector(value * MoveMultiplier, 0, 0));
+	AddActorLocalOffset(FVector(value * UGameplayStatics::GetWorldDeltaSeconds(GetWorld()) * MoveMultiplier, 0, 0));
 }
 
 void ATank::Turn(float value)
 {
-	AddActorLocalRotation(FRotator(0, value * TurnMultiplier, 0));
+	AddActorLocalRotation(FRotator(0, value * UGameplayStatics::GetWorldDeltaSeconds(GetWorld()) * TurnMultiplier, 0));
 }
