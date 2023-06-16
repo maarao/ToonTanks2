@@ -31,6 +31,6 @@ private:
 	UPROPERTY(EditAnywhere)
 	float TurnMultiplier = 100;
 
-	void Move(float value);
-	void Turn(float value);
+	void Move(float Value);
+	void Turn(float Value);
 };

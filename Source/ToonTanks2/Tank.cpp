@@ -24,12 +24,12 @@ void ATank::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 	PlayerInputComponent->BindAxis(TEXT("Turn"), this, &ATank::Turn);
 }
 
-void ATank::Move(float value)
+void ATank::Move(float Value)
 {
-	AddActorLocalOffset(FVector(value * UGameplayStatics::GetWorldDeltaSeconds(this) * MoveMultiplier, 0, 0));
+	AddActorLocalOffset(FVector(Value * UGameplayStatics::GetWorldDeltaSeconds(this) * MoveMultiplier, 0, 0), true);
 }
 
-void ATank::Turn(float value)
+void ATank::Turn(float Value)
 {
-	AddActorLocalRotation(FRotator(0, value * UGameplayStatics::GetWorldDeltaSeconds(this) * TurnMultiplier, 0));
+	AddActorLocalRotation(FRotator(0, Value * UGameplayStatics::GetWorldDeltaSeconds(this) * TurnMultiplier, 0), true);
 }
