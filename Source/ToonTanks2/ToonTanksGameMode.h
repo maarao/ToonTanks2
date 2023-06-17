@@ -22,6 +22,9 @@ protected:
 
 	UFUNCTION(BlueprintImplementableEvent)
 	void StartGame();
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void GameOver(bool bWonGame);
 	
 private:
 	UPROPERTY()
@@ -32,4 +35,7 @@ private:
 	float StartDelay = 3;
 
 	void HandleGameStart();
+
+	int32 TargetTowers = 0;
+	int32 GetTargetTowerCount();
 };
