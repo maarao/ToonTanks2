@@ -42,4 +42,10 @@ private:
 	UPROPERTY(VisibleAnywhere, Category="Combat")
 	UParticleSystemComponent* ParticleSystemComponent;
 
+	UPROPERTY(EditAnywhere, Category="Combat")
+	USoundBase* LaunchSound;
+
+	UPROPERTY(EditAnywhere, Category="Combat")
+	USoundBase* HitSound;
+
 };
