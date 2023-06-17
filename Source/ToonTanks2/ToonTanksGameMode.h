@@ -25,4 +25,8 @@ private:
 	class ATank* Tank;
 	UPROPERTY()
 	class AToonTanksPlayerController* ToonTanksPlayerController;
+
+	float StartDelay = 3;
+
+	void HandleGameStart();
 };
